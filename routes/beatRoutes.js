@@ -5,8 +5,9 @@ const {
   getBeatsGenre,
 } = require('../controllers/beatController');
 
-router.get('/api/beats/popular', getPopularBeats);
+const { protect } = require('../middleware/authMiddleware');
 
-router.get('/api/beats/genre', getBeatsGenre);
+router.get('/popular', getPopularBeats);
+router.get('/genre', getBeatsGenre);
 
 module.exports = router;
